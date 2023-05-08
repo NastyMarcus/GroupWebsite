@@ -10,7 +10,8 @@ import { BrowserRouter as Routes,useNavigate,useRoutes } from 'react-router-dom'
 import { useDispatch,useSelector } from 'react-redux';
 //组件
 import Header from './Component/Header';
-import Index from './Router/index'
+import Footer from './Component/Footer';
+import Index from './Router/index';
 import NavBar from './Component/NavBar';
 function App() {
   const {lang}  = useSelector(store=>store.demo);
@@ -19,9 +20,8 @@ function App() {
     <IntlProvider locale={lang} messages={lang === 'en-US' ? enUS : zhCN}>
       <Routes>
         <Header></Header>
-        <NavBar></NavBar>
         <Index></Index>
-        <div className="footer" style = {{position: 'absolute' ,bottom:'1px'}}>我是底部</div>
+        <Footer></Footer>
       </Routes>
     </IntlProvider>
   );
